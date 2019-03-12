@@ -1,0 +1,12 @@
+{% if robots_welcome == True %}
+User-agent: *
+Disallow: /tmp/
+Disallow: /apex/
+Disallow: /mypubs/
+Disallow: /newpubs/
+Disallow: /search
+Disallow: /metrics/
+{% else %}
+User-agent: *
+Disallow: /
+{% endif %}

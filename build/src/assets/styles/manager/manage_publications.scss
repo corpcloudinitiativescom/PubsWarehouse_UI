@@ -1,0 +1,121 @@
+.publications-container {
+  .alert-container {
+    @include make-sm-column(12);
+  }
+  .navbar {
+    .pub-search-form {
+      width: 70%;
+      .search-form-container {
+        width: 70%;
+        display: inline-block;
+        .form-group {
+          width: 100%;
+          .input-group {
+            width: 100%;
+            .input-group-btn {
+              width: 1%;
+            }
+            #search-term-input {
+              width: 100%;
+            }
+          }
+        }
+        .advanced-search-rows-container {
+          width: 100%;
+          .search-category-div {
+            width : 40%;
+          }
+          .search-category-value-div {
+            width: 59%;
+            input {
+              width : 100%;
+            }
+          }
+        }
+      }
+      .search-btn-div {
+        width: 29%;
+      }
+    }
+  }
+
+  .pub-management-container {
+    @include make-row();
+    .pub-filter-container {
+      @include make-md-column(4);
+      @include make-lg-column(2);
+    }
+    .pub-list-section {
+      @include make-md-column(8);
+      @include make-lg-column(10);
+      .pub-grid-container {
+        position: relative;
+
+        .pub-grid {
+          height : 515px;
+        }
+      }
+      .pubs-loading-indicator {
+        position: absolute;
+        top: 150px;
+        left: 500px;
+        text-align: center;
+      }
+    }
+
+    .pub-grid-footer {
+      @include make-md-column(12);
+      margin-bottom : 10px;
+      background-color : $table-bg-accent;
+      border : 1px solid $table-border-color;
+      padding-top: 10px;
+      .pub-grid-info  {
+        font-weight: bold;
+        margin-top : 5px;
+        @include make-sm-column(2);
+      }
+      .page-size-container {
+        margin-bottom: 0px;
+         @include make-sm-column(3);
+      }
+      .backgrid-paginator {
+        @include make-sm-column(7);
+        display: inline-block;
+      }
+    }
+  }
+
+  .manage-pubs-categories-section {
+    .remove-from-list-btn {
+      display: none;
+    }
+  }
+}
+// Overrides for issues between USWDS and bootstrap
+.usa-unstyled-list {
+  label {
+    font-weight: normal;
+    margin-top: 0;
+  }
+  input[type="checkbox"] {
+    width: 12px;
+    height: 1.3em;
+    display: inline-block;
+    position: absolute;
+    -webkit-appearance: none;
+  }
+}
+
+// Overrides to prevent big issues between USWDS and backgrid
+.backgrid {
+  margin-top: 0;
+
+  .boolean-cell, .selected {
+    min-width: 20px;
+  }
+  .boolean-cell input[type="checkbox"] {
+    width: 12px;
+    height: 1.3em;
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,14 @@
+<thead>
+    <tr>
+        <th scope="col">Date</th>
+        <th scope="col">{{columnLabel}}</th>
+    </tr>
+</thead>
+<tbody>
+    {{#each rows}}
+        <tr>
+            <td scope="row">{{date}}</td>
+            <td>{{value}}</td>
+        </tr>
+    {{/each}}
+</tbody>

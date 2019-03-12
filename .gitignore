@@ -30,7 +30,6 @@ server/instance/config.py
 /npm
 .coverage
 npm-debug.log
-build/
 dist/
 *.egg-info/
 /key.json

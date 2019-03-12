@@ -1,0 +1,12 @@
+#geospatial-div {
+  padding-top : 15px;
+  padding-bottom : 15px;
+  @include make-sm-column(12);
+  .control-label {
+    @include make-sm-column(2);
+  }
+
+  .form-group > div {
+    @include make-sm-column(10);
+  }
+}

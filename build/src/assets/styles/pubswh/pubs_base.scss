@@ -1,0 +1,213 @@
+$fa-font-path: "./fonts" !default;
+
+@import '../usgs_viz_id';
+
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
+@import './partials/pagination';
+@import './partials/_search_form';
+
+// General styles for all pages
+#main-content {
+  padding-left: $site-margins;
+  padding-right: $site-margins;
+}
+
+// Styles for the home page
+#welcome {
+  p {
+    font-size: $h3-font-size;
+  }
+}
+#new-pubs {
+  border: 1px solid $color-gray-dark;
+  border-radius: 5px;
+  padding-left: $site-margins-mobile;
+  padding-right: $site-margins-mobile;
+  padding-top: 0;
+  @media screen and (min-width: $large-screen) {
+    padding-left: $site-margins;
+    padding-right: $site-margins;
+    margin-bottom: $site-margins;
+  }
+  .filter-button {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .recent-pub {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+    @media screen and (min-width: $medium-large-screen) {
+      width: 85%;
+      margin-left: 1rem;
+    }
+    @media screen and (min-width: $large-screen) {
+      width: 90%;
+      margin-left: 1rem;
+    }
+  }
+  .thumbnail {
+    display: none;
+    @media screen and (min-width: $medium-large-screen) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+}
+
+// Styles for search results
+#search-results, #new-publications {
+  .search-result-contributors, .search-result-pubinfo {
+    color: $color-green;
+    font-size: $small-font-size;
+  }
+  .search-result-abstract {
+    font-size: $small-font-size;
+  }
+  article {
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Styles for publications page
+#publication-container {
+  .publication-header-container {
+    margin-top: 1rem;
+  }
+  .pubs-thumbnail {
+    @media screen and (max-width: $medium-screen) {
+      display: none;
+    }
+  }
+  .publication-header-info-container {
+    @media screen and (max-width: $medium-screen) {
+      width: 100%;
+    }
+
+    .series-title {
+      font-size: $h4-font-size;
+    }
+
+    .subseries-title {
+      font-size: $h5-font-size;
+    }
+
+    .collaboration {
+      font-size: $h6-font-size;
+    }
+  }
+
+  #contributors {
+    font-size: $small-font-size;
+    .list-title {
+      font-weight: bold;
+    }
+    .ai-orcid {
+      color: #a6ce39;
+      font-size: 1.6rem;
+      margin-left: .8rem;
+      margin-right: .8rem;
+    }
+  }
+
+  #doi-twitter-container {
+    float: left;
+    margin-top: 1rem;
+    .doi-container {
+      font-size: $small-font-size;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  #altmetric {
+    margin-top: 1rem;
+    @media screen and (min-width: $medium-screen) {
+      overflow: hidden;
+      float: right;
+    }
+  }
+
+  .files-list {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  #abstract {
+    .abstract-contents {
+    }
+    aside {
+      border: 1px solid $color-gray-dark;
+      background-color: $color-gray-lightest;
+      float:right;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      margin-left: 1rem;
+      @media screen and (max-width: $small-screen) {
+        display: none;
+      }
+      .pub-contact-info-container {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  #suggested-citation {
+    font-size: $small-font-size;
+  }
+
+  #details {
+    table {
+      tbody {
+        th {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Styles each browse page
+.browse-page {
+  margin-top: -15px;
+  padding: 15px;
+
+  .breadcrumb {
+    background: none;
+    margin-top: 15px;
+    padding-left: 0;
+    a {
+      text-decoration: none;
+      color: rgb(0, 51, 102);
+      font-weight: bold;
+    }
+    a {
+      text-decoration: none;
+      color: rgb(0, 51, 102);
+      font-weight: bold;
+      &:hover {
+        text-decoration:underline;
+      }
+    }
+  }
+  ul {
+  }
+}
+
+// Styles for documentation pages which are maintained in confluence
+.table-wrap {
+  overflow: auto;
+  .confluenceTable {
+    tbody {
+      tr:first-child {
+        th {
+          background-color: $color-gray-lightest;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{% extends 'pubswh/base.html' %}
+
+{% block head %}
+    <title>Contact Us- USGS Publications Warehouse Public Access Team</title>
+    <meta name="description" content="Contact Form for requesting public access versions of publications">
+    {% include 'pubswh/meta.html' %}
+{% endblock %}
+
+{% block main_pubswh %}
+    <div id="contact-page">
+        <h1>Contact us!</h1>
+        <h2>Contact the USGS Public Access Team to request public access version of USGS authored publications</h2>
+        <form id="contactForm" action="{{ url_for('pubswh.pub_access_contact') }}" method=post>
+            {{ contact_form.hidden_tag() }}
+
+            {% for name_error in contact_form.name.errors %}
+                {{ name_error }}
+            {% endfor %}
+
+            {{ contact_form.name(placeholder="Name", **{'aria-label': 'enter your name'}) }}
+
+            {% for email_error in contact_form.email.errors %}
+                {{ email_error }}
+            {% endfor %}
+
+            {{ contact_form.email(placeholder="Email", **{'aria-label': 'enter your email address'}) }}
+
+            {{ contact_form.originating_page(placeholder="Originating Page", **{'aria-label': 'originating page'}) }}
+
+            {{ contact_form.message(value="I would like to request the full text version of this publication", **{'aria-label': 'message content'}) }}
+
+            {% for captcha_error in contact_form.recaptcha.errors %}
+                {{ captcha_error }}
+            {% endfor %}
+
+            {{ contact_form.recaptcha }}
+
+            {{ contact_form.submit }}
+        </form>
+    </div>
+{% endblock %}
+
+{% block url %}
+    <a href="{{ url_for('pubswh.pub_access_contact') }}">http://pubs.er.usgs.gov{{ url_for('pubswh.pub_access_contact') }}</a>
+{% endblock %}

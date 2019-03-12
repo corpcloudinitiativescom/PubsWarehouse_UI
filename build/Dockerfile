@@ -1,0 +1,32 @@
+FROM centos:7
+
+# Install Python 3.6
+RUN yum -y update
+RUN yum -y install yum-utils groupinstall development
+RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum -y install python36u 
+RUN yum -y install python36u-setuptools
+RUN easy_install-3.6 pip
+RUN pip install --upgrade pip
+RUN pip install virtualenv
+
+# Install Nodejs 8.x
+RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - 
+RUN yum -y install nodejs 
+RUN yum -y install gcc-c++ make git
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY ./src /app
+
+# Build app with make
+RUN make
+
+# Expose port
+ENV PORT 5050
+EXPOSE 5050
+
+# Run server when the container launches
+CMD ["./server/env/bin/python", "./server/run.py", "--host=0.0.0.0"]
