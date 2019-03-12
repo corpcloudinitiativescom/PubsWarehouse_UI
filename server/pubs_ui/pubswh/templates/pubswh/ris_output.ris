@@ -1,3 +1,0 @@
-{%- for result in search_result_records -%}
-{%- include 'pubswh/ris_single.ris' -%}
-{% endfor %}

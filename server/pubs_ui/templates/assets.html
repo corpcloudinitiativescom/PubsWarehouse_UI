@@ -1,5 +1,0 @@
-{% macro LoadBundle(bundle) -%}
-    <script>
-        SystemJS.import('{{ ("scripts/" + bundle) | asset_url }}');
-    </script>
-{%- endmacro %}
